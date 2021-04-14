@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Captain.Command;
@@ -19,10 +19,11 @@ public class CaptainController : MonoBehaviour
     void Start()
     {
         this.gameObject.AddComponent<CaptainMotivateCommand>();
+        this.gameObject.AddComponent<CaptainGoCrazy>();
         this.Fire1 = this.gameObject.GetComponent<CaptainMotivateCommand>();
-        this.Fire2 = ScriptableObject.CreateInstance<DoNothing>();
-        this.Right = ScriptableObject.CreateInstance<DoNothing>();
+        this.Fire2 = this.gameObject.GetComponent<CaptaainGoCrazy>();
         this.Left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
+        this.Right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.Booty.text = "Booty";
 
     }
